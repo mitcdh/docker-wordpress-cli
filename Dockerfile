@@ -8,5 +8,5 @@ ADD https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /u
 RUN apt-get update && \
     apt-get install -y sudo && \
     apt-get clean all && \
-    chmod +x /usr/local/bin/wp && \
+    chmod 755 /usr/local/bin/wp && \
     rm /var/log/apt/* /var/log/alternatives.log /var/log/bootstrap.log /var/log/dpkg.log
