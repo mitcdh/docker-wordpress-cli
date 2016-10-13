@@ -1,4 +1,4 @@
-FROM wordpress
+FROM wordpress:php7.0
 
 MAINTAINER Mitchell Hewes <me@mitcdh.com>
 ENV DEBIAN_FRONTEND noninteractive
