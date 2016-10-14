@@ -1,0 +1,12 @@
+:2015
+startup php-fpm
+startup /www/wp-cron.sh &
+gzip
+fastcgi / 127.0.0.1:9000 php
+log stdout
+errors stderr
+root /www/public
+rewrite {
+    if {path} not_match ^\/wp-admin
+    to {path} {path}/ /index.php?_url={uri}
+}
