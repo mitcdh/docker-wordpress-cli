@@ -1,4 +1,4 @@
-FROM mitcdh/caddy-php:php7
+FROM mitcdh/caddy-php
 MAINTAINER Mitchell Hewes <me@mitcdh.com>
 
 ENV WORDPRESS_VERSION 4.6.1
