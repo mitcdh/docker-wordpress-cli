@@ -1,8 +1,8 @@
 FROM mitcdh/caddy-php
 MAINTAINER Mitchell Hewes <me@mitcdh.com>
 
-ENV WORDPRESS_VERSION 4.7.1
-ENV WORDPRESS_SHA1 8e56ba56c10a3f245c616b13e46bd996f63793d6
+ENV WORDPRESS_VERSION 4.7.3
+ENV WORDPRESS_SHA1 35adcd8162eae00d5bc37f35344fdc06b22ffc98
 
 ADD https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /usr/local/bin/wp
 COPY files/Caddyfile /caddy-bootstrap/Caddyfile
