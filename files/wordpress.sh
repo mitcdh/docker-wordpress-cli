@@ -1,5 +1,6 @@
 #!/bin/bash
 
+WP_BASE=/www/wordpress
 WP_HTML=/www/public
 
 if [ ! -d "$WP_HTML" ]; then
@@ -30,7 +31,8 @@ if ! [ -e index.php -a -e wp-includes/version.php ]; then
 		echo >&2 "WARNING: $(pwd) is not empty - press Ctrl+C now if this is an error!"
 		( set -x; ls -A; sleep 10 )
 	fi
-	tar cf - --one-file-system -C /www/wordpress . | tar xf -
+	tar cf - --one-file-system -C ${WP_BASE} . | tar xf -
+	chown -R www-data:www-data ${WP_HTML}
 	echo >&2 "Complete! WordPress has been successfully copied to $(pwd)"
 fi
 

@@ -16,11 +16,9 @@ RUN apk --update add \
  && rm -rf /var/cache/apk/* \
  && chmod 755 /usr/local/bin/wp /caddy-bootstrap/pre-run/01_wordpress /caddy-bootstrap/pre-run/02_wp-cron \
  && set -x \
- && curl -o wordpress.tar.gz -fSL "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz" \
- && echo "$WORDPRESS_SHA1 *wordpress.tar.gz" | sha1sum -c - \
+ && curl -o wordpress.tar.gz -fSL "https://wordpress.org/latest.tar.gz" \
  && tar -xzf wordpress.tar.gz -C /www \
- && rm wordpress.tar.gz \
- && chown -R www-data:www-data /www/wordpress
+ && rm wordpress.tar.gz
 
 VOLUME /www/public
 EXPOSE 2015
